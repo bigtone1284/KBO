@@ -1,0 +1,24 @@
+<h3>New Post</h3>
+<form action="/documents" method="POST">
+	<label for="title">Title<br>
+		<input type="text" name="document[title]">
+	</label><br>
+
+	<label for="author">Author<br>
+		<select name="author_id">
+			<% @authors.each do |author| %>
+				<option value="<%= author.id %>"><%= author.given_name + " " + author.surname %></option>
+			<% end %>
+		</select>
+	</label><br>
+
+	<label for="blurb">Blurb (Short Description of article)<br>
+		<input type="text" name="blurb">
+	</label><br>
+
+	<label for="content">Post<br>
+		<textarea type="text" rows="15" cols="40" name="content"></textarea>
+	</label><br>
+	
+	<input type="submit" name="submit">
+</form>

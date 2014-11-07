@@ -1,0 +1,5 @@
+<h2><%= @documents.find(@version.document_id).title %></h2>
+<h3>by <%= @authors.find(@version.author_id).given_name + " " + @authors.find(@version.author_id).surname%></h3><br>  
+<p> <%= @version.blurb %> </p> <br>
+<p> <%= @version.content %> </p>
+

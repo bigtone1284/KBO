@@ -1,0 +1,24 @@
+<h3>Edit Post</h3>
+<form action="/documents/edit_version" method="POST">
+	<label for="title">
+		<input type="hidden" name="document_id" value="<%= @document.id %>">
+	</label><br>
+
+	<label for="author">Author<br>
+		<select name="author_id">
+			<% @authors.each do |author| %>
+				<option value="<%= author.id %>"><%= author.given_name + " " + author.surname %></option>
+			<% end %>
+		</select>
+	</label><br>
+
+	<label for="blurb">Blurb (Short Description of article)<br>
+		<input type="text" name="blurb" value="<%= @current_version.blurb %>">
+	</label><br>
+
+	<label for="content">Post<br>
+		<textarea type="text" rows="15" cols="40" name="content"><%= @current_version.content %></textarea>
+	</label><br>
+	
+	<input type="submit" name="submit">
+</form>

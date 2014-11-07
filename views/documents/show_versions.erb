@@ -1,0 +1,5 @@
+<h2><%= @document.title %></h2>
+
+<% @versions.where(document_id: @document.id).each do |version| %>
+	<a href=" /versions/<%= version.id %> "><%= version.created_at  %></a><br>
+<% end %>

@@ -4,7 +4,7 @@
 
 # INDEX
 get '/authors' do
-  @authors = Author.all
+  @authors = Author.order(:surname)
   erb :'authors/index'
 end
 
