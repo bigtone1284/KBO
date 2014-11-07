@@ -1,0 +1,9 @@
+<h2><%= @author.given_name + " " + @author.surname %></h2>
+<h3><li><%= @author.username %></li></h3><br>
+
+<a href="/authors/<%= @author.id %>/edit">Edit</a>
+
+<form action="/authors/<%= @author.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>DELETE</button>
+</form>

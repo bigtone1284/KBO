@@ -1,0 +1,18 @@
+<h2>Edit Author Information</h2>
+<form action="/authors/<%= @author.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="given_name">Given Name<br>
+		<input type="text" name="author[given_name]" value="<%= @author.given_name %>">
+	</label><br>
+
+	<label for="surname">Surname<br>
+		<input type="text" name="author[surname]" value="<%= @author.surname %>">
+	</label><br>
+
+	<label for="username">Username<br>
+		<input type="text" name="author[username]" value="<%= @author.username %>">
+	</label><br>
+
+	<input type="submit" name="submit">
+</form>

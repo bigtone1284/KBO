@@ -14,5 +14,16 @@ require_relative '../models/comment.rb'
 require_relative './author_data.rb'
 require_relative './document_data.rb'
 
-author_data = get_song_data()
-document_data = get_artist_data()
+Author.destroy_all
+Document.destroy_all
+
+author_data = get_author_data()
+document_data = get_document_data()
+
+author_data.each do |author|
+	Author.create(author)
+end
+
+document_data.each do |document|
+	Document.create(document)
+end

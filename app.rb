@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra_reloader'
+require 'sinatra/reloader'
 require 'active_record'
 require 'better_errors'
 

@@ -5,25 +5,30 @@ DROP TABLE IF EXISTS comments CASCADE;
 
 CREATE TABLE authors (
 	id SERIAL PRIMARY KEY,
-	given_name VARCHAR(255), 
-	surname VARCHAR(255),
-	username VARCHAR(255)
-)
+	given_name VARCHAR(255) NOT NULL, 
+	surname VARCHAR(255) NOT NULL,
+	username VARCHAR(255) NOT NULL,
+	created_at TIMESTAMP
+);
 
-CREATE TABLE document (
+CREATE TABLE documents (
 	id SERIAL PRIMARY KEY,
-	title VARCHAR(255)
-)
+	title VARCHAR(255) NOT NULL,
+	created_at TIMESTAMP
+);
 
 CREATE TABLE versions (
 	id SERIAL PRIMARY KEY,
-	blurb VARCHAR(255),
-	content TEXT,
-	author_id INTEGER REFERENCES authors,
-	document_id INTEGER REFERENCES documents
-)
+	blurb VARCHAR(255) NOT NULL,
+	content TEXT NOT NULL,
+	author_id INTEGER REFERENCES authors NOT NULL,
+	document_id INTEGER REFERENCES documents NOT NULL,
+	created_at TIMESTAMP
+);
 
-CREATE TABLE comment (
+CREATE TABLE comments (
 	id SERIAL PRIMARY KEY,
-	commentary TEXT
-)
+	commentary TEXT NOT NULL,
+	version_id INTEGER REFERENCES versions NOT NULL,
+	created_at TIMESTAMP
+);

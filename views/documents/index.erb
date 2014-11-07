@@ -1,0 +1,7 @@
+<h2>KBO Wiki Document Titles</h2>
+
+<p><a href="/documents/new">Add a document title</a></p>
+
+<% @documents.each do |document| %>
+				<p><%= document.title %></p>
+<% end %>
