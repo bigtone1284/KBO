@@ -3,3 +3,27 @@ DROP TABLE IF EXISTS documents CASCADE;
 DROP TABLE IF EXISTS versions CASCADE;
 DROP TABLE IF EXISTS comments CASCADE;
 
+CREATE TABLE authors (
+	id SERIAL PRIMARY KEY,
+	given_name VARCHAR(255), 
+	surname VARCHAR(255),
+	username VARCHAR(255)
+)
+
+CREATE TABLE document (
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(255)
+)
+
+CREATE TABLE versions (
+	id SERIAL PRIMARY KEY,
+	blurb VARCHAR(255),
+	content TEXT,
+	author_id INTEGER REFERENCES authors,
+	document_id INTEGER REFERENCES documents
+)
+
+CREATE TABLE comment (
+	id SERIAL PRIMARY KEY,
+	commentary TEXT
+)
