@@ -6,4 +6,9 @@
 <form action="/authors/<%= @author.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<button>DELETE</button>
-</form>
+</form><br>
+
+<% @author.documents.order(:title).uniq.each do |document| %>
+	<a href="/versions/<%= @author.id %>/<%= document.id%>/show "><%= document.title %></a><br><br>
+<% end %>
+			

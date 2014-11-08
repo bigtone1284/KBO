@@ -26,7 +26,7 @@ end
 get '/documents/:id/show_versions' do
 	# @versions = Version.where(document_id: params[:id])
 	@document = Document.find(params[:id])
-	@versions = @document.versions.order(:created_at)
+	@versions = @document.versions.order(created_at: :desc)
 	erb :'documents/show_versions'
 end
 

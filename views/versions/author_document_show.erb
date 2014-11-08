@@ -1,0 +1,5 @@
+<h3>Versions</h3>
+<hr><br>
+<% @versions.each do |version| %>
+	<a href="/versions/<%= version.id %>"><%= version.created_at %></a><br>
+<% end %>
