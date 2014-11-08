@@ -19,23 +19,23 @@
 <h4>Authors</h4>
 <% @authors.each do |author| %>
 	<% if author.created_at == author.updated_at %>
-		<a href="/authors/<%= author.id %>"><%= author.username %> joined KBO Wiki</a><br>
+		<a href="/authors/<%= author.id %>"><%= author.username %> joined KBO Wiki</a> | <%= author.created_at %><br>
 	<% else %>
-		<a href="/authors/<%= author.id %>"><%= author.username %> changed their info</a><br>
+		<a href="/authors/<%= author.id %>"><%= author.username %> changed their info</a> | <%= author.updated_at %><br>
 	<% end %>
 <% end %>
 
 <h4>New Documents</h4>
 <% @documents.each do |document| %>
-	<a href="/documents/<%= document.id %>"><%= document.title %> was created</a><br>
+	<a href="/documents/<%= document.id %>"><%= document.title %> was created</a> | <%= document.created_at %><br>
 <% end %>
 
 <h4>Edits</h4>
 <% @versions.each do |version| %>
-	<a href="/versions/<%= version.id %>"><%= version.document.title %> was edited</a><br>
+	<a href="/versions/<%= version.id %>"><%= version.document.title %> was edited</a> | <%= version.created_at %><br>
 <% end %>
 
 <h4>Comments</h4>
 <% @comments.each do |comment| %>
-	<a href="/comments/<%= comment.document_id %>"><%= @authors.find(comment.author_id).whole_name %> commented on <%= @documents.find(comment.document_id).title %></a><br>
+	<a href="/comments/<%= comment.document_id %>"><%= @authors.find(comment.author_id).whole_name %> commented on <%= @documents.find(comment.document_id).title %></a> | <%= comment.created_at %><br>
 <% end %>
