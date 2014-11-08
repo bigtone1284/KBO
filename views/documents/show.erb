@@ -15,34 +15,4 @@
 
 <hr>
 
-<% if @comments %>
-	<h3>Comments</h3>
-	<% @comments.each do |comment| %>
-		<p><%= comment.commentary %></p>
-		<p><%= @authors.find(comment.author_id).whole_name %></p>
-		<p><%= comment.created_at %></p>
-	<% end %>
-<% end %>
-
-<hr>
-
-<h3>Leave a Comment</h3>
-<form action="/comments" method="POST">
-	<label for="document_id"><br>
-		<input type="hidden" name="document_id" value="<%=@document.id%>">
-	</label>
-
-	<label for="author">Author<br>
-		<select name="author_id">
-			<% @authors.each do |author| %>
-				<option value="<%= author.id %>"><%= author.whole_name %></option>
-			<% end %>
-		</select>
-	</label><br>
-
-	<label for="commentary">Leave a Comment<br>
-		<textarea type="text" rows="8" cols="40" name="commentary"></textarea>
-	</label><br>
-	
-	<input type="submit" name="submit">
-</form>
+<a href="/comments/<%= @document.id %>">Join the Discussion on this Topic</a>
