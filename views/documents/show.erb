@@ -1,7 +1,12 @@
 <h2><%= @document.title %></h2>
 
 <a href="/versions/<%= @document.id %>/show_versions">See All Versions of this Document Here</a><br>
-<a href="/documents/<%= @document.id %>/edit">Edit This Doc</a><br>
+<a href="/documents/<%= @document.id %>/edit">Edit This Document</a><br>
+<form action="/documents/<%= @document.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>Delete This Document</button><br>
+</form>
+
 <hr>
 <h3>by <%= @authors.find(@current_version.author_id).whole_name %> </h3>
 

@@ -10,7 +10,7 @@ As a user, I want to be able to edit (create a new version for) a wiki document,
 Accomplished!
 
 As a user, I want to be able to delete a wiki document, so I can remove all traces of an inappropriate document
-To be completed today.  
+Accomplished! 
 
 As a user, I want to be able to create an author, so I can add more people to the wiki's community
 Accomplished.

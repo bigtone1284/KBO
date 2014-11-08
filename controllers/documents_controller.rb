@@ -45,6 +45,11 @@ post '/documents/edit_version' do
 	redirect "/versions/#{version.id}"
 end
 
+delete '/documents/:id' do
+	Document.find(params[:id]).destroy
+	redirect "/documents"
+end
+
 
 
 
