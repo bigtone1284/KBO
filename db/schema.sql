@@ -29,6 +29,7 @@ CREATE TABLE versions (
 CREATE TABLE comments (
 	id SERIAL PRIMARY KEY,
 	commentary TEXT NOT NULL,
-	version_id INTEGER REFERENCES versions NOT NULL,
+	document_id INTEGER REFERENCES documents NOT NULL,
+	author_id INTEGER REFERENCES authors NOT NULL,
 	created_at TIMESTAMP
 );

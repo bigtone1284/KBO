@@ -27,3 +27,35 @@ Accomplished
 
 As a user, I want to be able to see a single version of the document, so I can inspect a document's snapshot in time in detail
 Accomplished.  
+
+Bonus
+
+Additional Entities
+comment
+
+
+Further User Stories:
+As a user, I want to be able to search for wikis by title (only exact matches need to be supported), so I can quickly find what I'm looking for
+Accomplished!
+
+As a user, I want to be able to add comments to a wiki page on a "discuss" page used to discuss changes to a wiki document, so collaborators can talk debate about changes to a document
+
+Accomplished!
+
+As a user, I want to be able to see on the front page all recent activity done to the wiki (creations/edits/deletions), so I can keep up with the wiki's current events easily
+
+As a user, I want to be able to revert a wiki document to a previous revision, so I can undo bad changes to a document. This should not remove any version, but should merely create a new version that is identical to the one which the user wants to revert to
+Accomplished!
+
+Super Bonus Allow the user to be able to see a visual "diff" between two different versions of a document in its edit history (this would be very hard to do without using an external library of some sort)
+
+
+
+
+
+
+
+
+
+
+

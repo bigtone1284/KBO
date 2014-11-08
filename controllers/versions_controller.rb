@@ -16,3 +16,8 @@ get '/versions/:document_id/show_versions' do
 	@versions = @document.versions.order(created_at: :desc)
 	erb :'versions/show_versions'
 end
+
+post '/versions/:id/make_current' do
+	current = Version.find(params[:id]).make_current
+	redirect "/versions/#{current.document_id}/show_versions"
+end

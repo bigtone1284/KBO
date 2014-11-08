@@ -1,5 +1,10 @@
 <h2><%= @documents.find(@version.document_id).title %></h2>
 <h3>by <%= @authors.find(@version.author_id).whole_name%></h3><br>  
+
+<form action="/versions/<%= @version.id %>/make_current" method="POST">
+	<button>Set this article to current version for this Document</button><br>
+</form>
+
 <p> <%= @version.blurb %> </p> <br>
 <p> <%= @version.content %> </p>
 

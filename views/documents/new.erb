@@ -7,7 +7,7 @@
 	<label for="author">Author<br>
 		<select name="author_id">
 			<% @authors.each do |author| %>
-				<option value="<%= author.id %>"><%= author.given_name + " " + author.surname %></option>
+				<option value="<%= author.id %>"><%= author.whole_name %></option>
 			<% end %>
 		</select>
 	</label><br>

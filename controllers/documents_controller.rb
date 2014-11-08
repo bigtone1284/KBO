@@ -18,13 +18,29 @@ post  '/documents' do
 		author_id: params[:author_id],
 		document_id: document.id
 	})
-	redirect "/versions/#{version.id}"
+	redirect "/documents/#{document.id}"
+end
+
+post '/documents/search' do
+	if Document.find_by(title: params[:title])
+		doc_id = Document.find_by(title: params[:title]).id
+		redirect "/documents/#{doc_id}"
+		binding.pry
+	else
+		redirect "/documents/sorry/#{params[:title]}"
+	end
+end
+
+get "/documents/sorry/:title" do
+	@title = params[:title]
+	erb :'documents/no_match'
 end
 
 get '/documents/:id' do
 	@document = Document.find(params[:id])
 	@authors = Author.order(:surname)
 	@current_version = @document.versions.order(:created_at).last || Version.new
+	@comments = @document.comments.order(created_at: :desc)
 	erb :'documents/show'
 end
 
