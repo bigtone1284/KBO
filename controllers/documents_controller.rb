@@ -21,13 +21,11 @@ post  '/documents' do
 	redirect "/versions/#{version.id}"
 end
 
-#Show all versions of a document
-
-get '/documents/:id/show_versions' do
-	# @versions = Version.where(document_id: params[:id])
+get '/documents/:id' do
 	@document = Document.find(params[:id])
-	@versions = @document.versions.order(created_at: :desc)
-	erb :'documents/show_versions'
+	@authors = Author.order(:surname)
+	@current_version = @document.versions.order(:created_at).last || Version.new
+	erb :'documents/show'
 end
 
 get '/documents/:id/edit' do
@@ -46,5 +44,7 @@ post '/documents/edit_version' do
 		})
 	redirect "/versions/#{version.id}"
 end
+
+
 
 

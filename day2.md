@@ -16,7 +16,7 @@ As a user, I want to be able to create an author, so I can add more people to th
 Accomplished.
 
 As a user, I want to be able to view an author's page that lists the documents that they have created or edited, so I can find out about their contributions to the wiki
-To be completed today.  
+Accomplished! 
 
 
 As a user, I want to be able to edit an author's information, so I can update my information

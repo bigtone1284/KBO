@@ -1,0 +1,9 @@
+<h2><%= @document.title %></h2>
+
+<a href="/versions/<%= @document.id %>/show_versions">See All Versions of this Document Here</a><br>
+<a href="/documents/<%= @document.id %>/edit">Edit This Doc</a><br>
+<hr>
+<h3>by <%= @authors.find(@current_version.author_id).whole_name %> </h3>
+
+<p> <%= @current_version.blurb %> </p> <br>
+<p> <%= @current_version.content %> </p>
