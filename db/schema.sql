@@ -8,13 +8,15 @@ CREATE TABLE authors (
 	given_name VARCHAR(255) NOT NULL, 
 	surname VARCHAR(255) NOT NULL,
 	username VARCHAR(255) NOT NULL,
-	created_at TIMESTAMP
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP
 );
 
 CREATE TABLE documents (
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(255) NOT NULL,
-	created_at TIMESTAMP
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP
 );
 
 CREATE TABLE versions (
@@ -23,7 +25,8 @@ CREATE TABLE versions (
 	content TEXT NOT NULL,
 	author_id INTEGER REFERENCES authors NOT NULL,
 	document_id INTEGER REFERENCES documents NOT NULL,
-	created_at TIMESTAMP
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP
 );
 
 CREATE TABLE comments (
@@ -31,5 +34,6 @@ CREATE TABLE comments (
 	commentary TEXT NOT NULL,
 	document_id INTEGER REFERENCES documents NOT NULL,
 	author_id INTEGER REFERENCES authors NOT NULL,
-	created_at TIMESTAMP
+	created_at TIMESTAMP,
+	updated_at TIMESTAMP
 );
