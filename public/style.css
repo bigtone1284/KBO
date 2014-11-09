@@ -1,0 +1,26 @@
+body {
+	background-image: url("http://traveljapanblog.com/wordpress/wp-content/uploads/2014/01/137_2011-korean-baseball-centerfielder-nice-catch.jpg");
+}
+
+.wrapper {
+	background: whitesmoke;
+	padding: 1em;
+	margin: 2em;
+	border-radius: 1em;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: darkslateblue;
+}
+
+a:hover {
+    color: seagreen;
+}
+
+footer {
+	text-align: center;
+}

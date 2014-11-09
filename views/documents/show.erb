@@ -1,7 +1,6 @@
 <h2><%= @document.title %></h2>
-
-<a href="/versions/<%= @document.id %>/show_versions">See All Versions of this Document Here</a><br>
-<a href="/documents/<%= @document.id %>/edit">Edit This Document</a><br>
+<p> <%= @current_version.blurb %> </p>
+<a href="/versions/<%= @document.id %>/show_versions">Previous Versions</a> | <a href="/documents/<%= @document.id %>/edit">Edit This Document</a>
 <form action="/documents/<%= @document.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<button>Delete This Document</button><br>
@@ -9,8 +8,8 @@
 
 <hr>
 <h3>by <%= @authors.find(@current_version.author_id).whole_name %> </h3>
+<a href="/authors/<%= @current_version.author_id %>"><%= @authors.find(@current_version.author_id).username %></a>
 
-<p> <%= @current_version.blurb %> </p>
 <p> <%= @current_version.content %> </p>
 
 <hr>

@@ -5,8 +5,8 @@
 	<h3>Comments</h3>
 	<% @comments.each do |comment| %>
 		<p><%= comment.commentary %></p>
-		<p><%= @authors.find(comment.author_id).whole_name %></p>
-		<p><%= comment.created_at %></p>
+		<li><p><%= @authors.find(comment.author_id).whole_name %> | <%= comment.created_at %></p></li>
+		<hr>
 	<% end %>
 <% end %>
 

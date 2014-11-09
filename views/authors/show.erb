@@ -1,14 +1,15 @@
-<h2><%= @author.given_name + " " + @author.surname %></h2>
-<h3><li><%= @author.username %></li></h3><br>
+<h3><%= @author.whole_name %></h3>
+<li><%= @author.username %></li><br>
 
 <a href="/authors/<%= @author.id %>/edit">Edit</a>
 
 <form action="/authors/<%= @author.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<button>DELETE</button>
-</form><br>
-
+</form>
+<hr>
+<h3>Documents Contributed</h3>
 <% @author.documents.order(:title).uniq.each do |document| %>
-	<a href="/versions/<%= @author.id %>/<%= document.id%>/show "><%= document.title %></a><br><br>
+	<li><a href="/versions/<%= @author.id %>/<%= document.id%>/show "><%= document.title %></a><br></li>
 <% end %>
 			
