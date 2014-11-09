@@ -11,4 +11,8 @@ class Version < ActiveRecord::Base
 	})
 	end
 
+	def version_compare(version)
+		Diffy::Diff.new(self.content, version.content).to_s(:html)
+	end
+
 end

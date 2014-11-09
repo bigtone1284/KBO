@@ -1,0 +1,24 @@
+<h2>Version Compare</h2>
+<h3><%= @document.title %></h3>
+<hr>
+<form action="/versions/diffs" method="GET">
+	
+	<label for="version_1">Version 1<br>
+		<select name="version_1">
+			<% @versions.each do |version| %>
+				<option value="<%= version.id %>"><%= version.created_at %></option>
+			<% end %>
+		</select>
+	</label><br>
+
+	<label for="version_2">Version 2<br>
+		<select name="version_2">
+			<% @versions.each do |version| %>
+				<option value="<%= version.id %>"><%= version.created_at %></option>
+			<% end %>
+		</select>
+	</label><br>
+	
+	<input type="submit" name="submit">
+</form>
+

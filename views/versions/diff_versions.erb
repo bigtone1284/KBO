@@ -1,0 +1,25 @@
+<h3>Version Differences - <%= @document1.title %></h3>
+<h4>Notes on Differences</h4>
+<li><b>Bold</b> text has been added from Version 1 to Version 2.</li>
+<li><s>Struck-through</s> text has been removed between Version 1 and Version 2.</li>
+<li><u>Underlined</u> text has been edited from Version 1 to Version 2.</li>
+<li>Plain text appears in both versions.</li>
+<div style="max-width: 550px;">
+<div style="float: left;">
+<h4>Version 1</h4>	
+<p>Author: <%= @author1.whole_name %></p>
+<p>Blurb: <%= @version1.blurb %></p>
+<p>Created At: <%= @version1.created_at %></p>
+</div>
+<div style="float: right; margin-left: 50px;">
+<h4>Version 2</h4>	
+<p>Author: <%= @author2.whole_name %></p>
+<p>Blurb: <%= @version2.blurb %></p>
+<p>Created At: <%= @version2.created_at %></p>
+</div></div>
+<hr>
+<% if @version2.created_at < @version1.created_at %>
+	<p><%= Diffy::Diff.new(@version2.content, @version1.content).to_s(:html) %></p>
+<% else %>
+	<p><%= Diffy::Diff.new(@version1.content, @version2.content).to_s(:html) %></p>
+<% end %>

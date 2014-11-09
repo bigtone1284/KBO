@@ -1,5 +1,7 @@
 <h2><%= @document.title %></h2>
-
+<hr>
+<a href="/versions/<%= @document.id %>/compare_versions">Compare Versions of this Document</a><br><br>
 <% @versions.where(document_id: @document.id).each do |version| %>
 	<a href=" /versions/<%= version.id %> "><%= version.created_at  %></a><br>
 <% end %>
+

@@ -50,6 +50,7 @@ As a user, I want to be able to revert a wiki document to a previous revision, s
 Accomplished!
 
 Super Bonus Allow the user to be able to see a visual "diff" between two different versions of a document in its edit history (this would be very hard to do without using an external library of some sort)
+Accomplished!
 
 
 

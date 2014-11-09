@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'active_record'
 require 'better_errors'
 require 'pry'
+require 'diffy'
 
 require_relative 'models/author.rb'
 require_relative 'models/document.rb'
